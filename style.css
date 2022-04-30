@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap');
+
+/* 
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-base);
+  background-color: var(--background);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+/* ########## FORMULARIO LOGIN ##########*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50%;
+  height: 100vh;
+  padding: 0 50px;
+}
+
+.subtitle {
+  width: 100%;
+}
+
+.subtitle h2 {
+  color: var(--text-title);
+}
+
+.subtitle p {
+  font-weight: 500;
+}
+
+.form-box, .form-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-box {
+  align-items: center;
+  background-color: var(--form-background);
+  width: 572px;
+  min-height: 512px;
+  border-radius: 4px;
+  padding: 50px;
+}
+
+.form-box form {
+  align-items: flex-start;
+}
+
+.form-box form a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.input-login {
+  width: 100%;
+  max-width: 372px;
+  height: 44px;
+  margin: 20px 0;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+
+  border: 2px solid var(--text-base);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.input:focus-within, .input:hover {
+  border: 2px solid var(--primary-color);
+}
+
+.input input {
+  width: 100%;
+  padding: 0 40px;
+
+  color: var(--text-base);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 44px;
+}
+
+.input img{
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  transition: all .3s ease-in;
+}
+
+.input #eye-icon {
+  left: auto;
+  right: 10px;
+}
+
+.input .icon-focus {
+  visibility: hidden;
+  transition: all .2s ease-in;
+}
+
+.input:focus-within img {
+  opacity: 0;
+}
+
+.input:focus-within .icon-focus, .input:hover .icon-focus {
+  visibility: visible;
+  opacity: 100%;
+}
+
+.checkbox-remember {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.checkbox-remember input{
+  background-color: var(--primary-color);
+}
+
+.form-box input[type="submit"] {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: var(--form-background);
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 51px;
+  border-radius: 5px;
+  margin: 10px 0;
+
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.form-box input[type="submit"]:hover {
+  box-shadow: 0px 0px 5px var(--primary-color);
+  filter: brightness(105%);
+}
+
+/* ########## BACKGROUND-IMAGE ########## */
+
+.background {
+  justify-self: flex-end;
+  width: 50%;
+  height: 100%;
+  object-fit: contain;
+  overflow-x: hidden;
+  padding: 0;
+
+}
+
+.background img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* ########## MEDIA-QUERIES ########## */
+
+@media (max-width: 1040px) {
+  .checkbox-remember {
+    flex-direction: column;
+  }
+
+  .checkbox-remember a {
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  main {
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .background {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-color: var(--form-background);
+  }
+
+  .container {
+    padding: 0;
+  }
+}
